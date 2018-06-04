@@ -1,0 +1,7 @@
+my_homepage:
+    path:     /test
+    defaults: { _controller: MyBundle:Default:index }
+
+about_page:
+    path: /about
+    defaults: { _controller: MyBundle:Default: about}
