@@ -18,16 +18,20 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
-}
+    //Я тут убрал скобку, из за нее был фатал
 
-/**
- * @Route("/", methods={"POST"}, requirements={_format"html"} name="homepage")
- */
-public function testAction(Request $request)
-{
-    // replace this example code with whatever you need
-    return $this->render('default/index.html.twig', array(
-        'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-    ));
-}
+//    Пока что закоментил чтобы работало, у тебя один и тот же URL идет с разными методами,
+//    тот код что ниже переписывает метод на POST и уже становится тебе не доступен из браузера, браузер запрашивает все страницы по GET методу
+//    /**
+//     * @Route("/", methods={"POST"}, requirements={"_format" = "html"}, name="homepage")
+//     *
+//     * после _format был semantical error, забыла = и _format должен быть записан как "_format"
+//     */
+//    public function testAction(Request $request)
+//    {
+//        // replace this example code with whatever you need
+//        return $this->render('default/index.html.twig', array(
+//            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+//        ));
+//    }
 }

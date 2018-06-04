@@ -11,10 +11,11 @@ class DefaultController extends Controller
     {
         return $this->render('MyBundle:Default:index.html.twig');
     }
-}
 
-Public function aboutAction ()
-{
-return $this->render('MyBundle:Default:index.html.twig');
+    //Запомни что в контроллере может быть несколько методов, убрал скобку } чтобы был валидный код
+    public function aboutAction()
+    {
+        return $this->render('MyBundle:Default:index.html.twig');
 
+    }
 }
